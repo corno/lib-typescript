@@ -18,10 +18,10 @@ export const $$: A.generateTypesystem = () => {
         'generateTypesystem': a_2typescript.$a.generate({
             'createApostrophedString': a_typescript.$r.createApostrophedString(),
             'createIdentifier': a_typescript.$r.createIdentifier(),
-            'dictionaryForEach': a_foreach.$r.createDictionaryForEach({
+            'dictionaryForEach': a_foreach.$r.dictionaryForEach({
                 'compare': a_collation.$r.localeIsABeforeB()
             }),
-            'enrichedDictionaryForEach': a_foreach.$r.createEnrichedDictionaryForEach({
+            'enrichedDictionaryForEach': a_foreach.$r.enrichedDictionaryForEach({
                 'compare': a_collation.$r.localeIsABeforeB()
             }),
         })
