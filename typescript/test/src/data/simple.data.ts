@@ -10,7 +10,7 @@ import {
 
 } from "lib-proto-typesystem/dist/submodules/unresolved/shorthands"
 
-export const $: g_llts.T.Namespace<pd.SourceLocation> = ns(
+export const $: g_llts.T.Local__Namespace<pd.SourceLocation> = ns(
     {}, {}, {
         "Foo": array(optional(string()))
     }

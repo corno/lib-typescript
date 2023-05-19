@@ -11,8 +11,8 @@ export const $$: A.generate = ($d) => {
         $: g_protots.T.Function__Declaration,
         $i: g_fp.SYNC.I.Line,
     ) => void
-    type Generate_Namespace__Selection = (
-        $: g_protots.T.Namespace__Selection,
+    type Generate_Namespace__Selection__Tail = (
+        $: g_protots.T.Namespace__Selection__Tail,
         $i: g_fp.SYNC.I.Line,
     ) => void
     type Generate_Type = (
@@ -60,13 +60,13 @@ export const $$: A.generate = ($d) => {
         })
         $i.snippet(`) => `)
     }
-    const generate_Namespace__Selection: Generate_Namespace__Selection= ($, $i) => {
+    const generate_Namespace__Selection__Tail: Generate_Namespace__Selection__Tail = ($, $i) => {
         //$i.snippet($d.createIdentifier($.namespace.key))
         pl.optional(
             $.tail,
             ($) => {
                 $i.snippet(`.`)
-                generate_Namespace__Selection($, $i)
+                generate_Namespace__Selection__Tail($, $i)
             },
             () => {
 
@@ -162,19 +162,19 @@ export const $$: A.generate = ($d) => {
             case 'type reference':
                 pl.ss($, ($) => {
                     switch ($[0]) {
-                        // case 'cyclic sibling':
-                        //     pl.ss($, ($) => {
-                        //         $i.snippet($d.createIdentifier($.key))
-                        //     })
-                        //     break
-                        // case 'sibling':
-                        //     pl.ss($, ($) => {
-                        //         $i.snippet($d.createIdentifier($.key))
-                        //     })
-                        //     break
+                        case 'cyclic sibling':
+                            pl.ss($, ($) => {
+                                $i.snippet($d.createIdentifier($.key))
+                            })
+                            break
+                        case 'sibling':
+                            pl.ss($, ($) => {
+                                $i.snippet($d.createIdentifier($.key))
+                            })
+                            break
                         case 'external':
                             pl.ss($, ($) => {
-                                generate_Namespace__Selection($.namespaces, $i)
+                                generate_Namespace__Selection__Tail($.namespaces, $i)
                                 //$i.snippet(`.${$d.createIdentifier($.type.key)}`)
                             })
                             break
